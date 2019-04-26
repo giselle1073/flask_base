@@ -31,13 +31,16 @@ def get_contacts(id, check_author=True):
 
 
 @bp.route("/")
+@login_required
 def index():
     """Retrieve the necessary context for the homepage."""
     db = get_db()
     contacts_list = db.execute(
         "SELECT c.id, uses_remaining, start_date, owner_id, username, end_date"
         " FROM contacts c JOIN user u ON c.owner_id = u.id"
+	" WHERE u.id = ?" 
         " ORDER BY start_date DESC",
+	(g.user["id"],)
     ).fetchall()
     return render_template("contacts/index.html", contacts_list=contacts_list)
 
