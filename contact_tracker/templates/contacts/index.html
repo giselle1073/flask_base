@@ -12,15 +12,16 @@
     <article class="contacts">
       <header>
         <div>
-          <h1>{{ contacts['uses_remaining'] }} uses remaining</h1>
-          <div class="about">by {{ contacts['username'] }} on {{ contacts['start_date'].strftime('%Y-%m-%d') }}</div>
-	  <div class="about">end date on {{ contacts['end_date'].strftime('%Y-%m-%d')  }} </div>
+          <h1>{{ contacts['uses_remaining'] }} Uses Remaining</h1>
+	  <div class="about">Start Date: {{ contacts['start_date'].strftime('%Y-%m-%d') }}</div>
+	  <div class="about">End Date: {{ contacts['end_date'].strftime('%Y-%m-%d')  }} </div>
         </div>
-        {% if g.user['id'] == contacts['owner_id'] %}
           <a class="action" href="{{ url_for('contacts.update', id=contacts['id']) }}">Edit</a>
-        {% endif %}
+  <form action="{{ url_for('contacts.delete', id=contacts['id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form>
+
       </header>
-      <p class="body">some body text here</p>
     </article>
     {% if not loop.last %}
       <hr>

@@ -1,5 +1,5 @@
 html {
-  font-family: sans-serif;
+  font-family: times new roman;
   background: #471323;
   padding: 1rem;
 }
@@ -7,26 +7,26 @@ html {
 body {
   max-width: 960px;
   margin: 0 auto;
-  background: #CEB992;
+  background: #471323;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: serif;
-  color: #585563;
+  font-family: times new roman;
+  color: #377ba8;
   margin: 1rem 0;
 }
 
 a {
-  color: white;
+  color: #471323;
 }
 
 hr {
   border: none;
-  border-top: 1px solid white;
+  border-top: 1px solid lightgray;
 }
 
 nav {
-  background: #;
+  background: #471323;
   display: flex;
   align-items: center;
   padding: 0 0.5rem;
@@ -125,11 +125,10 @@ nav ul li a, nav ul li span, header .action {
 }
 
 input.danger {
-  color: #;
+  color: #cc2f2e;
 }
 
 input[type=submit] {
   align-self: start;
   min-width: 10em;
 }
-
