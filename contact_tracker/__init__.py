@@ -7,7 +7,7 @@ def create_app(test_config=None):
     # create and configure app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY="dev",  # TODO get from environment variable
+        SECRET_KEY=os.urandom(24).hex(),
         DATABASE=os.path.join(app.instance_path, "contact_tracker.sqlite")
     )
 
